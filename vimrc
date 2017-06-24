@@ -8,19 +8,16 @@ inoremap UU <Esc>u
 nnoremap <D-F> :Ag<space>
 
 nmap :s :%s
-nmap <leader>O O<Esc>
-nmap <leader>o o<Esc>
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeFind<CR>
 nmap <leader>p <C-^>
 nmap <leader>w  :ZoomWin<CR>
 nmap <leader>vs :vsp<CR>
 nmap <leader>sp :sp<CR>
-nmap <leader>sp :sp<CR>
-nmap <leader>5 %
 nmap :norm :%norm A
 nmap :I :%norm I
-nmap dfd "_dd
+nnoremap <D-/> :call NERDComment(0,"toggle")<C-m>
+vnoremap <D-/> :call NERDComment(0,"toggle")<C-m>
 
 nmap ys' ysiw'
 nmap ys" ysiw"
@@ -31,10 +28,6 @@ nmap ys[ ysiw[
 nmap tab= :Tabularize /=<CR>
 nmap tab: :Tabularize /:\zs<CR>
 
-nmap <leader>jj <C-w>j
-nmap <leader>kk <C-w>k
-nmap <leader>hh <C-w>h
-nmap <leader>ll <C-w>l
 
 :set iskeyword-=_
 :set vb t_vb=
@@ -110,6 +103,8 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
 " tmux command runner
 Plugin 'jgdavey/tslime.vim'
+" comment out lines
+Plugin 'scrooloose/nerdcommenter'
 
 
 " subl-like smart completion of braces
