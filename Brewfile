@@ -1,0 +1,12 @@
+brew 'rbenv'
+brew 'coreutils'
+brew 'macvim', args: ['with-override-system-vim']
+tap 'caskroom/cask'
+cask_args appdir: '/Applications'
+cask 'alfred'
+cask 'iterm2'
+cask 'google-chrome'
+cask '1password'
+cask 'divvy'
+cask 'LaunchControl'
+cask 'licecap'
