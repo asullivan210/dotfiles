@@ -4,7 +4,7 @@
 ########## Variables
 
 DOTS="$PWD"
-files="vimrc.after bash_profile"    # list of files/folders to symlink in homedir
+files="agignore gvimrc vim vimrc bash_profile"    # list of files/folders to symlink in homedir
 
 ##########
 
