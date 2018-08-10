@@ -25,17 +25,30 @@ nmap ys) ysiw)
 nmap ys} ysiw}
 nmap ys[ ysiw[
 
+"toggling between window
+nmap <leader>jj <C-w>j
+nmap <leader>kk <C-w>k
+nmap <leader>hh <C-w>h
+nmap <leader>ll <C-w>l
+
 nmap tab= :Tabularize /=<CR>
 nmap tab: :Tabularize /:\zs<CR>
 
 
-:set iskeyword-=_
-:set vb t_vb=
-set tabstop=2    " <tab> inserts 2 spaces
+set iskeyword-=_
+set vb t_vb=
+"set tabstop=2    " <tab> inserts 2 spaces
 set nowrap       " don't wrap text
-set backspace=2  " allow backspacing over autoindent, BOL, EOL
-set shiftwidth=2 " indent level is 2 spaces wide
-set expandtab    " use spaces not tabs for autoindent/tab key
+"set backspace=2  " allow backspacing over autoindent, BOL, EOL
+"set shiftwidth=2 " indent level is 2 spaces wide
+"set expandtab    " use spaces not tabs for autoindent/tab key
+set number       " show line numbers
+
+
+"Always show statusline
+set laststatus=2
+"Show working directory in statusline
+set statusline+=%f
 
 " Searching
 set hlsearch     " highlight search results
@@ -51,19 +64,24 @@ set wildignore+=*/.sass-cache/*,*/tmp/*
 set wildignore+=tags,tmp/**,build/**
 set wildignore+=*vim/backups*,argfile*,*/out/*
 set wildignore+=*coverage/*
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
+let g:ctrlp_working_path_mode = 'ra'
+  "c - the directory of the current file.
+  "a - like "c", but only applies when the current working directory outside of
+      "CtrlP isn't a direct ancestor of the directory of the current file.
+  "r - the nearest ancestor that contains one of these directories or files:
+      ".git .hg .svn .bzr _darcs
+let g:ctrlp_lazy_update = 1 "Only update when typing has stopped
+let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' } "Replace the built-in matching algorithm.
+let g:ctrlp_tabpage_position = 'bc' " open ctrlp match before current tab
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+ "Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_max_files=20
 endif
 
 let loaded_netrwPlugin = 1 " Do not show netrw description on load
@@ -72,7 +90,6 @@ set encoding=utf-8 nobomb " show line numbers
 set noswapfile " avoid annoying swap files
 set ttyfast " disable error bells
 set noerrorbells " disable visual bells
-
 
 set nocompatible              " be iMproved, required (vundle)
 filetype off                  " required (vundle)
@@ -105,28 +122,23 @@ Plugin 'ReekenX/vim-rename2'
 Plugin 'jgdavey/tslime.vim'
 " comment out lines
 Plugin 'scrooloose/nerdcommenter'
-
-
+" keep track of recently used files
+Plugin 'jeetsukumaran/vim-buffergator'
 " subl-like smart completion of braces
-" Plugin 'Raimondi/delimitMate'
-" typing autocomplete using lua
-" Plugin 'Shougo/neocomplete.vim'
-" rspec, run from vim
-" Plugin 'thoughtbot/vim-rspec'
+Plugin 'Raimondi/delimitMate'
 " fast multi-cursor editing
 " Plugin 'terryma/vim-multiple-cursors'
 "
 " Syntax
 Plugin 'tpope/vim-endwise'
 Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-sleuth'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'editorconfig/editorconfig-vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
@@ -135,3 +147,4 @@ endif
 
 " Done configuring vundle
 call vundle#end()
+
