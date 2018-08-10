@@ -94,6 +94,15 @@ set noerrorbells " disable visual bells
 set nocompatible              " be iMproved, required (vundle)
 filetype off                  " required (vundle)
 " set the runtime path to include Vundle and initialize
+" " START - Setting up Vundle - the vim plugin bundler
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+endif
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install Pluginins
@@ -140,6 +149,8 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sleuth'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+:PluginInstall
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

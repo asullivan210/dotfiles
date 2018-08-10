@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/ariellesullivan/dotfiles'
+let g:netrw_dirhist_2='/Users/ariellesullivan/dotfiles/bundle'
+let g:netrw_dirhist_3='/Users/ariellesullivan/dotfiles'
+let g:netrw_dirhist_4='/Users/ariellesullivan'
+let g:netrw_dirhist_5='/Users/ariellesullivan/dotfiles'
+let g:netrw_dirhist_6='/Users/ariellesullivan/dotfiles/vim'
+let g:netrw_dirhist_7='/Users/ariellesullivan/dotfiles/vim/bundle'
+let g:netrw_dirhist_8='/Users/ariellesullivan/dotfiles/vim'
+let g:netrw_dirhist_9='/Users/ariellesullivan/dotfiles'
