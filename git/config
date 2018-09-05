@@ -1,0 +1,7 @@
+[user]
+  name = Arielle Sullivan
+  email = ariellejsullivan@gmail.com
+  username = asullivan210
+
+[credential]
+  helper = osxkeychain
