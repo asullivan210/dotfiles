@@ -126,6 +126,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments ./install.sh' }
 " smart search within all files
 Plugin 'rking/ag.vim'
+
+"vue js syntax highlighting
+Plugin 'posva/vim-vue'
+
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
@@ -151,6 +155,9 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sleuth'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+"linting
+Plugin 'w0rp/ale'
 
 if isFirstTimeSoInstallVundle == 1
   PluginInstall

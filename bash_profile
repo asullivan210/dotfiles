@@ -4,6 +4,7 @@ parse_git_branch() {
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 export PATH=/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin:$PATH
 export EDITOR="vim"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 
 if [ -f ~/.git-completion.bash ]; then

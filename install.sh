@@ -5,6 +5,7 @@
 
 DOTS="$PWD"
 files="git agignore gvimrc vim vimrc bash_profile"    # list of files/folders to symlink in homedir
+plists="com.mizage.direct.Divvy.plist"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,3 +30,8 @@ for file in $files; do
   ln -fsv $DOTS/$file ~/.$file
 done
 ln -fsv $DOTS/Brewfile ~/Brewfile
+
+for file in $plists; do
+  echo "Creating symlink to $file in home directory."
+  ln -fsv $DOTS/plists/$file ~/Library/Preferences/$file
+done
