@@ -4,6 +4,7 @@ map <leader>4 $
 imap OO <C-O>o<Esc>
 inoremap DD <Esc>dd
 inoremap UU <Esc>u
+" map autocomplete to tab in deoplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 nnoremap <D-F> :Ag<space>
@@ -159,6 +160,9 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sleuth'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+" automatically format files
+Plugin 'prettier/vim-prettier'
 
 "linting
 Plugin 'w0rp/ale'
