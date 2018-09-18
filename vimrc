@@ -4,6 +4,7 @@ map <leader>4 $
 imap OO <C-O>o<Esc>
 inoremap DD <Esc>dd
 inoremap UU <Esc>u
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 nnoremap <D-F> :Ag<space>
 
@@ -34,6 +35,9 @@ nmap <leader>ll <C-w>l
 nmap tab= :Tabularize /=<CR>
 nmap tab: :Tabularize /:\zs<CR>
 
+
+set foldmethod=indent "fold based on indentation
+set nofoldenable "open files with no fold
 
 set iskeyword-=_
 set vb t_vb=
@@ -159,6 +163,15 @@ Plugin 'editorconfig/editorconfig-vim'
 "linting
 Plugin 'w0rp/ale'
 
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 if isFirstTimeSoInstallVundle == 1
   PluginInstall
 endif
@@ -169,4 +182,3 @@ endif
 
 " Done configuring vundle
 call vundle#end()
-
