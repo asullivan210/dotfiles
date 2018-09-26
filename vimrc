@@ -4,8 +4,9 @@ map <leader>4 $
 imap OO <C-O>o<Esc>
 inoremap DD <Esc>dd
 inoremap UU <Esc>u
-" map autocomplete to tab in deoplete
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" map autocomplete selection to j and k in deoplete
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 nnoremap <D-F> :Ag<space>
 
@@ -42,10 +43,10 @@ set nofoldenable "open files with no fold
 
 set iskeyword-=_
 set vb t_vb=
-"set tabstop=2    " <tab> inserts 2 spaces
+set tabstop=2    " <tab> inserts 2 spaces
 set nowrap       " don't wrap text
 "set backspace=2  " allow backspacing over autoindent, BOL, EOL
-"set shiftwidth=2 " indent level is 2 spaces wide
+set shiftwidth=2 " indent level is 2 spaces wide
 "set expandtab    " use spaces not tabs for autoindent/tab key
 set number       " show line numbers
 
@@ -132,9 +133,6 @@ Plugin 'JazzCore/ctrlp-cmatcher', { 'do': 'CFLAGS=-Qunused-arguments CPPFLAGS=-Q
 " smart search within all files
 Plugin 'rking/ag.vim'
 
-"vue js syntax highlighting
-Plugin 'posva/vim-vue'
-
 " useful unix commands, move, remove, find, locate
 Plugin 'tpope/vim-eunuch'
 Plugin 'ReekenX/vim-rename2'
@@ -151,6 +149,7 @@ Plugin 'Raimondi/delimitMate'
 "
 " Syntax
 Plugin 'tpope/vim-endwise'
+"Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'leafgarland/typescript-vim'
@@ -158,6 +157,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sleuth'
+Plugin 'posva/vim-vue'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'editorconfig/editorconfig-vim'
 
