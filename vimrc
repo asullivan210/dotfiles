@@ -14,7 +14,7 @@ nmap :s :%s
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeFind<CR>
 nmap <leader>p <C-^>
-nmap <leader>w  :ZoomWin<CR>
+"nmap <leader>w  :ZoomWin<CR>
 nmap <leader>vs :vsp<CR>
 nmap <leader>sp :sp<CR>
 nmap :norm :%norm A
@@ -160,6 +160,11 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'posva/vim-vue'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+" go to file
+Plugin 'zoubin/vim-gotofile'
+set path=.,src,node_nodules
+set suffixesadd=.js,.jsx 
 
 " automatically format files
 Plugin 'prettier/vim-prettier'
