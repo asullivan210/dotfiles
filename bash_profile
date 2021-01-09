@@ -6,17 +6,14 @@ export PATH=/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin:$PATH
 export EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+# goes with brew install bash-completion
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
 fi
 
-function pg_kill_db() {
-   psql -d $1 -c "select pg_terminate_backend(pg_stat_activity.pid) from pg_stat_activity where pg_stat_activity.datname = '${1}' and pid <> pg_backend_pid();";
-}
 
 alias bprof='mvim ~/.bash_profile'
-alias ibm='cd ~/ibm/homepage-ui'
+alias dev='cd ~/development'
 alias gd='git diff'
 alias gst='git status'
 alias ga='git add'

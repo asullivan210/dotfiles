@@ -4,9 +4,6 @@ map <leader>4 $
 imap OO <C-O>o<Esc>
 inoremap DD <Esc>dd
 inoremap UU <Esc>u
-" map autocomplete selection to j and k in deoplete
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 nnoremap <D-F> :Ag<space>
 
@@ -171,15 +168,6 @@ Plugin 'prettier/vim-prettier'
 
 "linting
 Plugin 'w0rp/ale'
-
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
 if isFirstTimeSoInstallVundle == 1
   PluginInstall

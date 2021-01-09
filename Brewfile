@@ -1,21 +1,33 @@
-brew 'rbenv'
 brew 'coreutils'
-brew 'macvim', args: ['with-override-system-vim']
+
+
+# javascript
 brew 'node'
 brew 'nvm'
 brew 'yarn'
-tap 'caskroom/cask'
+
+brew 'bash-completion@2'
+
 cask_args appdir: '/Applications'
-cask 'flycut'
 cask 'iterm2'
-cask 'google-chrome'
-cask '1password'
-cask 'shiftit'
-cask 'LaunchControl'
-cask 'licecap'
-cask 'slack'
 cask 'sublime-text'
+
+cask 'flycut'
+cask 'google-chrome'
+cask 'lastpass'
+cask 'divvy'
+cask 'LaunchControl'
+cask 'slack'
 cask 'postman'
 cask 'visual-studio-code'
 cask 'spotify'
-cask 'java'
+
+# kubernetes development
+brew 'k3d'
+brew 'operator-sdk'
+brew 'awscli'
+brew 'argocd'
+brew 'kubernetes-cli'
+brew 'tfenv'
+tap 'derailed/k9s'
+brew 'derailed/k9s/k9s'
