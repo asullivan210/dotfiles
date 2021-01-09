@@ -1,15 +1,29 @@
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# Find and set branch name var if in git repository.
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '- ('$branch')'
+  fi
 }
-export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+# Enable substitution in the prompt.
+setopt prompt_subst
+
+# Config for prompt. PS1 synonym.
+PROMPT='%2/ %F{yellow}$(git_branch_name) %f'
+
 export PATH=/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin:$PATH
 export EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 # goes with brew install bash-completion
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
-fi
+# if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+#    . /usr/local/share/bash-completion/bash_completion
+# fi
 
 
 alias bprof='mvim ~/.bash_profile'

@@ -3,7 +3,7 @@
 dir=~/development/dotfiles                    # dotfiles directory
 olddir=~/development/dotfiles_old             # old dotfiles backup directory
 # files="bash_profile vimrc vim gvimrc agignore"        # list of files/folders to symlink in homedir
-files="zshrc gitconfig bash_profile vimrc gvimrc agignore"        # list of files/folders to symlink in homedir
+files="aws zshrc gitconfig bash_profile vimrc gvimrc agignore"        # list of files/folders to symlink in homedir
 
 ##########
 
