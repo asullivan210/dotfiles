@@ -26,8 +26,9 @@ export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 # fi
 
 
-alias bprof='mvim ~/.bash_profile'
+alias bprof='code ~/.bash_profile'
 alias dev='cd ~/development'
+alias zlife='cd ~/zlife'
 alias gd='git diff'
 alias gst='git status'
 alias ga='git add'

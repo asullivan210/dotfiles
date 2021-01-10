@@ -1,4 +1,7 @@
 node_modules/*
+aws/*
+!aws/credentials.example
 Brewfile.lock.json
 .DS_Store
+
 
