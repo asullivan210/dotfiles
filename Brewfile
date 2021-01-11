@@ -22,6 +22,7 @@ cask 'postman'
 cask 'visual-studio-code'
 cask 'spotify'
 
+brew 'fzf' # also run $(brew --prefix)/opt/fzf/install
 cask 'zoom'
 # kubernetes development
 brew 'k3d'
