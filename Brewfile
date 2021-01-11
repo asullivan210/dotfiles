@@ -22,8 +22,11 @@ cask 'postman'
 cask 'visual-studio-code'
 cask 'spotify'
 
+cask 'zoom'
 # kubernetes development
 brew 'k3d'
+brew 'helm'
+brew 'kustomize'
 brew 'operator-sdk'
 brew 'awscli'
 brew 'argocd'

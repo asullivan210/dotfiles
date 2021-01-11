@@ -10,12 +10,6 @@ function git_branch_name()
   fi
 }
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Config for prompt. PS1 synonym.
-PROMPT='%2/ %F{yellow}$(git_branch_name) %f'
-
 export PATH=/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin:$PATH
 export EDITOR="vim"
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
@@ -42,3 +36,4 @@ alias gwip="git add .; git commit -m 'wip';"
 alias gco='git checkout'
 alias ghist="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short head -25"
 alias gundolast="git reset --soft HEAD^"
+alias k="kubectl"
